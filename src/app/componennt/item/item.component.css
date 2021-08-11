@@ -1,6 +1,16 @@
-.quantite{
-    width: 100px;
+.quantite {
+    width: 120px;
     display: flex;
     justify-content: space-between;
-  
+    align-items: baseline;
+    margin-bottom: 10px;
+}
+
+.main{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.item{
+    margin: 10px;
 }

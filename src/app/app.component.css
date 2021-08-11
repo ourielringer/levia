@@ -1,0 +1,16 @@
+.main{
+    position: relative;
+}
+
+.footer{
+    position: relative;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.content{
+    height: 670px;
+    overflow: auto;
+    padding: 30px;
+}

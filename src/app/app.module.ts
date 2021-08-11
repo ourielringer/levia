@@ -10,7 +10,8 @@ import { ItemComponent } from './componennt/item/item.component';
   declarations: [
     AppComponent,
     FrontPageComponent,
-    ItemComponent
+    ItemComponent,
+    
   ],
   imports: [
     BrowserModule,
