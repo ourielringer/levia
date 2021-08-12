@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { DataService } from 'src/app/cervices/data.service';
+import { Item } from 'src/app/models/myModels';
 
 @Component({
   selector: 'app-item',
@@ -8,27 +9,23 @@ import { DataService } from 'src/app/cervices/data.service';
 })
 export class ItemComponent implements OnInit {
 
+  @Input() item:Item;
+
   quantite:number = 1;
-  price:number = 15;
-  total:number = this.price;
-
-  arr:number[] = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
-
+  
   constructor(public svcData:DataService) { }
+  
+  ngOnInit() { }
 
-  ngOnInit() {
-  }
-
-  quantitePlus(){
+  quantitePlus(this){
     this.quantite++;
-    this.total += this.price; 
   }
+
   quantiteMinus(){
     if( this.quantite <= 1 ){
       return;
     } 
     this.quantite--;
-    this.total -= this.price;
   }
 
 }

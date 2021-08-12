@@ -1,3 +1,11 @@
 .nava{
     background: rgb(109, 109, 255);
 }
+
+.main{
+    display: flex;
+    flex-wrap: wrap;
+}
+.item{
+    margin: 10px;
+}

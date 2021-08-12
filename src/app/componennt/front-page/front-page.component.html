@@ -1,1 +1,9 @@
-<!-- <div *ngFor="let i of " class="item"></div> -->
+
+
+<div class="main">
+    <img src="" alt="image">
+
+    <div *ngFor="let i of svcData.listItem" class="item">
+        <app-item [item]="i"></app-item>
+    </div>
+</div>

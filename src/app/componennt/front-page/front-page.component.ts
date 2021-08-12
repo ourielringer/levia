@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
+import { DataService } from 'src/app/cervices/data.service';
 
 
 @Component({
@@ -9,7 +9,7 @@ import {NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
 })
 export class FrontPageComponent implements OnInit {
 
-  
+  constructor(public svcData:DataService){}
 
   ngOnInit() {
   }
