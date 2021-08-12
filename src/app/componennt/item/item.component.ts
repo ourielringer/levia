@@ -19,6 +19,7 @@ export class ItemComponent implements OnInit {
 
   quantitePlus(this){
     this.quantite++;
+    
   }
 
   quantiteMinus(){
