@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DataService } from './cervices/data.service';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  getItem(id){
+  constructor(public svcData:DataService){}
+
+  getItem(id:string){
     console.log(id);
+    this.svcData.getById(id);
   }
 }
