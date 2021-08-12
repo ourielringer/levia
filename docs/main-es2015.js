@@ -41,7 +41,7 @@ module.exports = "<div class=\"main\">\r\n    <nav class=\"navbar navbar-expand-
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\r\n\r\n<div class=\"main\">\r\n    <img src=\"\" alt=\"image\">\r\n\r\n    <div *ngFor=\"let i of svcData.listItem\" class=\"item\">\r\n        <app-item [item]=\"i\"></app-item>\r\n    </div>\r\n</div>\r\n"
+module.exports = "\r\n\r\n<div class=\"main\">\r\n    <img src=\"\" alt=\"image\">\r\n<!-- \r\n    <div *ngFor=\"let i of svcData.listItem\" class=\"item\">\r\n        <app-item [item]=\"i\"></app-item>\r\n    </div> -->\r\n</div>\r\n"
 
 /***/ }),
 
@@ -351,16 +351,18 @@ ItemComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Item", function() { return Item; });
 class Item {
-    constructor(name, amount, price) {
+    constructor(name, amount, price, image) {
         this.name = name;
         this.amount = amount;
         this.price = price;
+        this.image = image;
     }
 }
 Item.ctorParameters = () => [
     { type: String },
     { type: Number },
-    { type: Number }
+    { type: Number },
+    { type: String }
 ];
 
 
