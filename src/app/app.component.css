@@ -13,4 +13,28 @@
     height: 640px;
     overflow: auto;
     padding: 30px;
+    display: flex;
+    justify-content: center;
+    background-image:url('/assets/img/logo.jpg');
+    /* opacity: 0.3; */
+
+}
+
+.div-ul-navbar{
+    display: flex;
+    justify-content: center;
+}
+
+.img{
+    border-radius: 20px;
+    /* opacity: 0.2; */
+
+}
+.img:hover{
+    /* opacity: 1.0; */
+}
+
+.head{
+    text-align: right;
+     /* float: right; */
 }

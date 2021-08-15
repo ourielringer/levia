@@ -1,7 +1,14 @@
+<div class="head">
+    <a href="">signin/signup</a>
+    <svg class="" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
+        <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+      </svg>
+</div>
+
 <div class="main">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid nava">
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="collapse navbar-collapse div-ul-navbar" id="navbarNav">
                 <ul class="navbar-nav">
                     <!-- <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -52,6 +59,26 @@
             <button type="button" (click)="showNavigationIndicators = !showNavigationIndicators" class="btn btn-outline-dark btn-sm">Toggle navigation indicators</button>
           </div> -->
     <div class="content row-2">
+        <h1>hello</h1>
+            <!-- <ngb-carousel *ngIf="images" [showNavigationArrows]="showNavigationArrows" [showNavigationIndicators]="showNavigationIndicators">
+                    <ng-template ngbSlide *ngFor="let image of images">
+                      <div class="picsum-img-wrapper">
+                        <img [src]="image" alt="Random slide">
+                      </div>
+                      <div class="carousel-caption">
+                        <h3>No mouse navigation</h3>
+                        <p>This carousel hides navigation arrows and indicators.</p>
+                      </div>
+                    </ng-template>
+                  </ngb-carousel>
+                  
+                  <hr>
+                  
+                  <div class="btn-group" role="group" aria-label="Carousel toggle controls">
+                    <button type="button" (click)="showNavigationArrows = !showNavigationArrows" class="btn btn-outline-dark btn-sm">Toggle navigation arrows</button>
+                    <button type="button" (click)="showNavigationIndicators = !showNavigationIndicators" class="btn btn-outline-dark btn-sm">Toggle navigation indicators</button>
+                  </div> -->
+        <!-- <img class="img" *ngIf="flagImg" src="assets/img/logo.jpg" alt="Chocolate faucet" srcset=""> -->
         <router-outlet></router-outlet>
     </div>
 

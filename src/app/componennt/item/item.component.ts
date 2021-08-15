@@ -9,24 +9,30 @@ import { Item } from 'src/app/models/myModels';
 })
 export class ItemComponent implements OnInit {
 
-  @Input() item:Item;
+  @Input() item: Item;
 
-  quantite:number = 1;
-  
-  constructor(public svcData:DataService) { }
-  
+  quantite: number = 1;
+
+  constructor(public svcData: DataService) { }
+
   ngOnInit() { }
 
-  quantitePlus(this){
+  quantitePlus(this) {
     this.quantite++;
-    
   }
 
-  quantiteMinus(){
-    if( this.quantite <= 1 ){
+  quantiteMinus() {
+    if (this.quantite <= 1) {
       return;
-    } 
+    }
     this.quantite--;
+  }
+
+  addItem(this:any) {
+    let item = new Item(this.item.name, this.item.amount, this.item.price, "", "");
+    item.quantite = this.quantite;
+    this.svcData.shoppingList.push(item);
+    console.log(this.svcData.shoppingList);
   }
 
 }

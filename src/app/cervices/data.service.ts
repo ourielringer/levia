@@ -9,43 +9,39 @@ export class DataService {
   constructor() { }
 
   listItem: Item[] = [
-    { name: "aaa", amount: "250", price: 15, image: "assets/img/boite-chocolat.jpg", categorie: "mixte" },
-    { name: "aaa", amount: "150", price: 11, image: "assets/img/boite-chocolat.jpg", categorie: "mixte" },
-    { name: "aaa", amount: "350", price: 20, image: "assets/img/boite-chocolat.jpg", categorie: "mixte" },
-    { name: "bbb", amount: "100", price: 10, image: "assets/img/m.jpg", categorie: "pralin" },
-    { name: "bbb", amount: "300", price: 23, image: "assets/img/m.jpg", categorie: "pralin" },
-    { name: "ccc", amount: "250", price: 35, image: "assets/img/n.jpg", categorie: "pruit" },
-    { name: "bbb", amount: "250", price: 15, image: "assets/img/m.jpg", categorie: "pralin" },
-    { name: "ccc", amount: "250", price: 15, image: "assets/img/n.jpg", categorie: "pruit" },
-    { name: "ccc", amount: "350", price: 20, image: "assets/img/n.jpg", categorie: "pruit" },
-    { name: "bbb", amount: "100", price: 10, image: "assets/img/m.jpg", categorie: "pralin" },
-    { name: "aaa", amount: "300", price: 23, image: "assets/img/boite-chocolat.jpg", categorie: "mixte" },
-    { name: "ccc", amount: "250", price: 35, image: "assets/img/n.jpg", categorie: "pruit" }
+   new Item( "aaa",250,15,"assets/img/boite-chocolat.jpg", "mixte" ),
+   new Item( "aaa",150,11,"assets/img/boite-chocolat.jpg", "mixte" ),
+   new Item( "aaa",350,23,"assets/img/boite-chocolat.jpg", "mixte" ),
+   new Item( "aaa",100,9,"assets/img/boite-chocolat.jpg", "mixte" ),
+   new Item( "bbb",250,24,"assets/img/m.jpg", "pralin" ),
+   new Item( "bbb",150,15,"assets/img/m.jpg", "pralin" ),
+   new Item( "bbb",350,33,"assets/img/m.jpg", "pralin" ),
+   new Item( "bbb",100,13,"assets/img/m.jpg", "pralin" ),
+   new Item( "bbb",300,30,"assets/img/m.jpg", "pralin" ),
+   new Item( "ccc",100,15,"assets/img/boite-chocolat.jpg", "pruit" ),
+   new Item( "ccc",150,22,"assets/img/boite-chocolat.jpg", "pruit" ),
+   new Item( "ccc",250,30,"assets/img/boite-chocolat.jpg", "pruit" ),
+   new Item( "ccc",300,33,"assets/img/boite-chocolat.jpg", "pruit" ),
   ];
 
 
-  itemSelected: Item[] = [];
+  categorieSelected: Item[] = [];
+  shoppingList:Item[] = [];
 
   getById(categorie: string) {
-    if (this.itemSelected.length > 0 && this.itemSelected[0].categorie == categorie ) {
+    if (this.categorieSelected.length > 0 && this.categorieSelected[0].categorie == categorie ) {
       console.log("==");
       return;
     }
     else {
-      this.itemSelected = []
-      console.log("gggggggggggg");
+      this.categorieSelected = []
 
       for (const item of this.listItem) {
         if (item.categorie == categorie) {
-          this.itemSelected.push(item);
-        }
+          this.categorieSelected.push(item);
+        }        
       }
     }
   }
 
-
-
 }
-
-
-
