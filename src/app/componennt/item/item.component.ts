@@ -29,9 +29,9 @@ export class ItemComponent implements OnInit {
   }
 
   addItem(this:any) {
-    let item = new Item(this.item.name, this.item.amount, this.item.price, "", "");
-    item.quantite = this.quantite;
-    this.svcData.shoppingList.push(item);
+    this.item.quantite = this.quantite;
+    this.svcData.shoppingList.push(this.item);
+    
     console.log(this.svcData.shoppingList);
   }
 
