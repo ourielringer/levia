@@ -11,27 +11,39 @@ export class ItemComponent implements OnInit {
 
   @Input() item: Item;
 
-  quantite: number = 1;
+  quantity: number = 1;
 
   constructor(public svcData: DataService) { }
 
   ngOnInit() { }
 
-  quantitePlus(this) {
-    this.quantite++;
+  quantityPlus() {
+    this.quantity++;
   }
 
-  quantiteMinus() {
-    if (this.quantite <= 1) {
+  quantityMinus() {
+    if (this.quantity <= 1) {
       return;
     }
-    this.quantite--;
+    this.quantity--;
   }
 
-  addItem(this:any) {
-    this.item.quantite = this.quantite;
+  addItem() {
+    if (this.svcData.shoppingList.length > 0) {
+
+      for (let itemInList of this.svcData.shoppingList) {
+        if (itemInList.name == this.item.name &&
+          itemInList.amount == this.item.amount) {
+          itemInList.quantite += this.quantity;
+          return;
+        }
+        else {
+          continue;
+        }
+      };
+    }
+    this.item.quantite = this.quantity;
     this.svcData.shoppingList.push(this.item);
-    
     console.log(this.svcData.shoppingList);
   }
 

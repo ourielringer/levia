@@ -9,10 +9,10 @@ export class DataService {
   constructor() { }
 
   listItem: Item[] = [
-   new Item( "aaa" ,250 ,15 ,"assets/img/boite-chocolat.jpg", "mixte" ),
+   new Item( "aaa" ,250 ,20 ,"assets/img/boite-chocolat.jpg", "mixte" ),
    new Item( "aaa" ,150 ,11 ,"assets/img/boite-chocolat.jpg", "mixte" ),
    new Item( "aaa" ,350 ,23 ,"assets/img/boite-chocolat.jpg", "mixte" ),
-   new Item( "aaa" ,100 ,9  ,"assets/img/boite-chocolat.jpg", "mixte" ),
+   new Item( "aaa" ,100 ,10  ,"assets/img/boite-chocolat.jpg", "mixte" ),
    new Item( "bbb" ,250 ,24 ,"assets/img/m.jpg", "pralin" ),
    new Item( "bbb" ,150 ,15 ,"assets/img/m.jpg", "pralin" ),
    new Item( "bbb" ,350 ,33 ,"assets/img/m.jpg", "pralin" ),

@@ -11,25 +11,24 @@ import { Item } from 'src/app/models/myModels';
 })
 export class FrontPageComponent implements OnInit {
 
-  myShoppingList:Item[];
-  total = 0;
+  // myShoppingList:Item[];
+  // total = 0;
 
   constructor(public svcData:DataService){    
-    this.myShoppingList = svcData.shoppingList;
+    // this.myShoppingList = svcData.shoppingList;
   }
   
   ngOnInit() {
   }
 
-  totalPrice(){
-    
-    for (const item of this.myShoppingList) {
+  // totalPrice(){
+  //   for (const item of this.myShoppingList) {
 
-      this.total+= (item.price * item.amount);
-      console.log(this.total);
-    }
+  //     this.total+= (item.price * item.amount);
+  //     console.log(this.total);
+  //   }
     
-  }
+  // }
 
  
 }

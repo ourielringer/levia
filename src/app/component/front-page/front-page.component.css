@@ -11,8 +11,3 @@
     margin: 10px;
 }
 
-.modal-item{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
