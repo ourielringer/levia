@@ -1,1 +1,138 @@
-<p>payment works!</p>
+<div class="card-body Card-details">
+    <h4 class="card-title mb-4">Payment info</h4>
+    <form [formGroup]="paymentDetails" >
+        <div>
+            <label for="username">Name on card</label>
+            <input type="text" class="form-control" placeholder="Ex. John Smith"
+                formControlName='name'>
+        </div>
+
+        <div class="form-group">
+            <label for="cardNumber">Card number</label>
+            <div class="input-group">
+                <input class="form-control" formControlName='cardNumber'>
+
+                <!-- <div *ngIf="cardNumber.invalid && (cardNumber.dirty || cardNumber.touched)" class="alert alert-danger">
+
+                    <div *ngIf="cardNumber.required">
+                        Name is required.
+                    </div>
+                    <div *ngIf="cardNumber.errors?.minlength">
+                        Name must be at least 4 characters long.
+                    </div>
+                    <div *ngIf="cardNumber.errors?.forbiddenName">
+                        Name cannot be Bob.
+                    </div>
+                </div> -->
+                <div class="input-group-append">
+                    <span class="input-group-text">
+                        <i class="fab fa-cc-visa"></i> &nbsp; <i class="fab fa-cc-amex"></i> &nbsp;
+                        <i class="fab fa-cc-mastercard"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md flex-grow-0">
+                <div class="form-group">
+                    <label><span class="hidden-xs">Expiration</span> </label>
+                    <div class="form-inline" style="min-width: 220px">
+                        <select class="form-control" style="width:100px" formControlName='month'>
+                            <option>01 - Janiary</option>
+                            <option>02 - February</option>
+                            <option>04 - March</option>
+                            <option>05 - April</option>
+                            <option>06 - May</option>
+                            <option>07 - June</option>
+                            <option>08 - Juli</option>
+                            <option>09 - August</option>
+                            <option>10 - September</option>
+                            <option>11 - November</option>
+                            <option>12 - December</option>
+                        </select>
+
+                        <span style="width:20px; text-align: center"> / </span>
+                        <select class="form-control" style="width:100px" formControlName='year'>
+                            <option *ngFor="let year of yearList">{{ year }}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label data-toggle="tooltip" title=""
+                        data-original-title="3 digits code on back side of the card">CVV <i
+                            class="fa fa-question-circle"></i></label>
+                    <input class="form-control" type="text" placeholder="123"
+                        formControlName='cvv'>
+                </div>
+            </div>
+        </div>
+        <button class="subscribe btn btn-primary btn-block" type="button" (click)="payment()"> Confirm </button>
+    </form>
+</div>
+<!-- 
+<form class="row g-3 needs-validation Card-details" novalidate>
+        <div class="col-md-4">
+          <label for="validationCustom01" class="form-label">First name</label>
+          <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="validationCustom02" class="form-label">Last name</label>
+          <input type="text" class="form-control" id="validationCustom02" value="Otto" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="validationCustomUsername" class="form-label">Username</label>
+          <div class="input-group has-validation">
+            <span class="input-group-text" id="inputGroupPrepend">@</span>
+            <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+            <div class="invalid-feedback">
+              Please choose a username.
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="validationCustom03" class="form-label">City</label>
+          <input type="text" class="form-control" id="validationCustom03" required>
+          <div class="invalid-feedback">
+            Please provide a valid city.
+          </div>
+        </div>
+        <div class="col-md-3">
+          <label for="validationCustom04" class="form-label">State</label>
+          <select class="form-select" id="validationCustom04" required>
+            <option selected disabled value="">Choose...</option>
+            <option>...</option>
+          </select>
+          <div class="invalid-feedback">
+            Please select a valid state.
+          </div>
+        </div>
+        <div class="col-md-3">
+          <label for="validationCustom05" class="form-label">Zip</label>
+          <input type="text" class="form-control" id="validationCustom05" required>
+          <div class="invalid-feedback">
+            Please provide a valid zip.
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+            <label class="form-check-label" for="invalidCheck">
+              Agree to terms and conditions
+            </label>
+            <div class="invalid-feedback">
+              You must agree before submitting.
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <button class="btn btn-primary" type="submit">Submit form</button>
+        </div>
+      </form> -->

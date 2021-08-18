@@ -24,7 +24,6 @@ export class AppComponent {
   total = 0;
 
 
-
   constructor(public svcData: DataService, public rout: Router, config: NgbCarouselConfig) {
     config.showNavigationArrows = true;
     config.showNavigationIndicators = true;
@@ -47,8 +46,8 @@ export class AppComponent {
     }
   }
 
-  deletItem(name, amount) {
-
+  deletItem(name:string, amount:number) {
+    confirm("?האם אתה בטוח")
     for (let i = 0; i < this.myShoppingList.length; i++) {
       if (this.myShoppingList[i].name == name && this.myShoppingList[i].amount == amount) {
         this.myShoppingList.splice(i, 1)
@@ -58,7 +57,11 @@ export class AppComponent {
     }
   }
 
-  
+  payment(){
+    console.log('payment');
+    
+    this.rout.navigate(['/payment'])
+  }
 
 
 }
