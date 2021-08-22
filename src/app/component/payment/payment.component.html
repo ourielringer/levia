@@ -1,16 +1,23 @@
 <div class="card-body Card-details">
     <h4 class="card-title mb-4">Payment info</h4>
-    <form [formGroup]="paymentDetails" >
-        <div>
+    <form role="form" [formGroup]="paymentDetails" (ngSubmit)="onSubmit()" novalidate>
+        <div class="form-group">
             <label for="username">Name on card</label>
-            <input type="text" class="form-control" placeholder="Ex. John Smith"
-                formControlName='name'>
+            <input class="form-control" formControlName='name' required>
+
+            <div *ngIf="submittted || paymentDetails.controls.name.touched"
+                    class="alert">
+
+                    <div class="error" *ngIf="paymentDetails.controls.name.errors?.required">
+                        card number is required.
+                    </div>
+                </div>
         </div>
 
         <div class="form-group">
             <label for="cardNumber">Card number</label>
             <div class="input-group">
-                <input class="form-control" formControlName='cardNumber'>
+                <input class="form-control" formControlName='cardNumber' value="123123412341234">
 
                 <!-- <div *ngIf="cardNumber.invalid && (cardNumber.dirty || cardNumber.touched)" class="alert alert-danger">
 
@@ -29,6 +36,16 @@
                         <i class="fab fa-cc-visa"></i> &nbsp; <i class="fab fa-cc-amex"></i> &nbsp;
                         <i class="fab fa-cc-mastercard"></i>
                     </span>
+                </div>
+            </div>
+            <div *ngIf="submittted || paymentDetails.controls.name.touched"
+                class="alert">
+
+                <div class="error" *ngIf="paymentDetails.controls.cardNumber.errors?.required">
+                    card number is required.
+                </div>
+                <div class="error" *ngIf="paymentDetails.controls.cardNumber.errors?.minlength || paymentDetails.controls.cardNumber.errors?.maxlength">
+                    card number Need 12 digits.
                 </div>
             </div>
         </div>
@@ -63,14 +80,16 @@
                     <label data-toggle="tooltip" title=""
                         data-original-title="3 digits code on back side of the card">CVV <i
                             class="fa fa-question-circle"></i></label>
-                    <input class="form-control" type="text" placeholder="123"
-                        formControlName='cvv'>
+                    <input class="form-control" type="text" placeholder="123" formControlName='cvv' value="123">
                 </div>
             </div>
         </div>
-        <button class="subscribe btn btn-primary btn-block" type="button" (click)="payment()"> Confirm </button>
+        <button class="subscribe btn btn-primary btn-block" type="submit"> Confirm </button>
     </form>
 </div>
+
+
+
 <!-- 
 <form class="row g-3 needs-validation Card-details" novalidate>
         <div class="col-md-4">

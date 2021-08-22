@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core'
+import { Component, ElementRef, ViewChild, OnInit } from '@angular/core'
 import { DataService } from './cervices/data.service';
 import { Router } from '@angular/router';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
@@ -59,9 +59,10 @@ export class AppComponent {
 
   payment(){
     console.log('payment');
-    
     this.rout.navigate(['/payment'])
   }
 
-
 }
+
+
+

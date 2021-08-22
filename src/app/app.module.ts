@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { FrontPageComponent } from './component/front-page/front-page.component';
 import { ItemComponent } from './component/item/item.component';
 import { PaymentComponent } from './component/payment/payment.component';
+import { FormsModule ,ReactiveFormsModule  } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,9 @@ import { PaymentComponent } from './component/payment/payment.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
